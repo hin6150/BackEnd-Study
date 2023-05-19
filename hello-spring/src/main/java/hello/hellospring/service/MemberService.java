@@ -3,16 +3,19 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepositroy;
 import hello.hellospring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.ErrorResponseException;
 
 import java.lang.reflect.Constructor;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     private final MemberRepositroy memberRepositroy;
-
+    @Autowired
     public MemberService(MemberRepositroy memberRepositroy) {
         this.memberRepositroy = memberRepositroy;
     }
